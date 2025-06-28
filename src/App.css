@@ -1,0 +1,226 @@
+.App {
+  font-family: 'Source Sans Pro', sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f7f3;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  color: #444;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #3b2f2f;
+  margin-bottom: 0.5rem;
+}
+
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem; 
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem; /* space for arrow */
+}
+
+select:focus {
+  border-color: #771111;
+  border: 2px solid  #771111;
+  outline: none; 
+}
+
+
+/* INPUT only */
+input {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+input:focus {
+  border-color: #771111;
+  border: 2px solid  #771111;
+  outline: none; 
+}
+
+button {
+  background-color: #3b2f2f;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1.4rem; 
+  font-weight: bold; 
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #aa4444;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.delete-btn:hover {
+  color: #771111;
+  transform: scale(1.1);
+}
+
+.category-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+  text-align: left; 
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.5s ease, text-decoration 0.5s ease;
+}
+
+.task-item.deleting {
+  opacity: 0;
+  text-decoration: line-through;
+}
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.done-checkbox {
+  appearance: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid #aa4444;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.done-checkbox:checked {
+  background-color: #aa4444;
+}
+
+.done-checkbox:checked::after {
+  content: '✓';
+  color: white;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.task-text.done {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: fadeInScale 0.3s ease;
+}
+
+.modal p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.confirm-btn {
+  background-color: #771111;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #eee;
+  font-weight: bold;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
