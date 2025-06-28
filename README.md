@@ -8,13 +8,14 @@ Your calm dashboard for today’s juggle.
 - CSS
 
 ## 🚀 Live Demo
-[https://your-site-name.netlify.app](https://your-site-name.netlify.app)
+[balanzia]( https://balanzia.netlify.app/)
 
 ## 📦 How to Run Locally
 
 ```bash
 npm install
 npm run dev
+```
 
 ## 🧠 Idea
 
